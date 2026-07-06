@@ -1,0 +1,217 @@
+/* ============================================================
+   darkmode.css  |  Dark Mode Added
+   All rules are scoped to body.dark-mode — zero impact on
+   existing light-mode design.
+   ============================================================ */
+
+/* --- Dark Mode Added: Smooth global transition --- */
+body,
+body *,
+body *::before,
+body *::after {
+    transition: background-color 0.35s ease, color 0.35s ease,
+                border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* --- Dark Mode Added: Body / page background --- */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* --- Dark Mode Added: Navbar --- */
+body.dark-mode .navbar {
+    background: rgba(18, 18, 18, 0.95) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* --- Dark Mode Added: Generic text lightening --- */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span:not(.navbar-toggler-icon),
+body.dark-mode label {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .text-muted {
+    color: #a0a0a0 !important;
+}
+
+/* --- Dark Mode Added: Course cards --- */
+body.dark-mode .card {
+    background-color: #1e1e1e !important;
+    border: 1px solid #2c2c2c !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.dark-mode .card-body,
+body.dark-mode .card-footer {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card-footer.bg-transparent {
+    background-color: transparent !important;
+    border-top: 1px solid #2c2c2c !important;
+}
+
+/* --- Dark Mode Added: Containers / sections with white/light bg --- */
+body.dark-mode .container,
+body.dark-mode .container-fluid:not(.bg-dark),
+body.dark-mode section {
+    background-color: transparent !important;
+}
+
+/* --- Dark Mode Added: Popular courses / stripe banner section --- */
+body.dark-mode .stripe {
+    background-image: linear-gradient(240deg, #7b0d18, #4a160e) !important;
+}
+
+/* keep the existing bg-dark footer readable in dark mode */
+body.dark-mode footer.bg-dark,
+body.dark-mode .bg-dark {
+    background-color: #0a0a0a !important;
+}
+
+/* --- Dark Mode Added: Buttons — slightly brighter for contrast --- */
+body.dark-mode .btn-primary {
+    background-color: #3d8ef8 !important;
+    border-color: #3d8ef8 !important;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #5ba3ff !important;
+    border-color: #5ba3ff !important;
+}
+
+body.dark-mode .btn-secondary {
+    background-color: #555 !important;
+    border-color: #555 !important;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background-color: #666 !important;
+    border-color: #666 !important;
+}
+
+/* --- Dark Mode Added: Modals --- */
+body.dark-mode .modal-content {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #2c2c2c !important;
+}
+
+body.dark-mode .modal-header,
+body.dark-mode .modal-footer {
+    border-color: #2c2c2c !important;
+}
+
+body.dark-mode .modal-title,
+body.dark-mode .modal-body label,
+body.dark-mode .modal-body .form-label {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- Dark Mode Added: Form inputs inside modals --- */
+body.dark-mode .form-control {
+    background-color: #2a2a2a !important;
+    border: 1px solid #3c3c3c !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888 !important;
+}
+
+body.dark-mode .form-control:focus {
+    background-color: #333 !important;
+    border-color: #3d8ef8 !important;
+    box-shadow: 0 0 0 0.2rem rgba(61, 142, 248, 0.25) !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .form-text {
+    color: #888 !important;
+}
+
+/* --- Dark Mode Added: Links --- */
+body.dark-mode a:not(.nav-link):not(.navbar-brand):not(.btn) {
+    color: #7eb8ff !important;
+}
+
+body.dark-mode a:not(.nav-link):not(.navbar-brand):not(.btn):hover {
+    color: #a8d1ff !important;
+}
+
+/* --- Dark Mode Added: Section headings that use inline color:#1a1a2e --- */
+/* Override inline styles via attribute selector */
+body.dark-mode [style*="color:#1a1a2e"],
+body.dark-mode [style*="color: #1a1a2e"] {
+    color: #e0e0e0 !important;
+}
+
+/* --- Dark Mode Added: Course page search input --- */
+body.dark-mode #courseSearchInput {
+    background: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #3c3c3c !important;
+}
+
+body.dark-mode #courseSearchInput::placeholder {
+    color: #888 !important;
+}
+
+/* --- Dark Mode Added: No courses found message --- */
+body.dark-mode #noCoursesMsg {
+    color: #a0a0a0 !important;
+}
+
+/* --- Dark Mode Added: Hero / banner images keep full brightness --- */
+body.dark-mode .container-fluid.bg-dark img {
+    opacity: 0.85;
+}
+
+/* ============================================================
+   Dark Mode Toggle Button  |  Dark Mode Added
+   Fixed in the navbar — positioned via flex order trick
+   ============================================================ */
+
+/* --- Dark Mode Added: Toggle button base styles --- */
+#darkModeToggle {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    padding: 4px 12px;
+    margin-left: 12px;
+    line-height: 1.5;
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    vertical-align: middle;
+}
+
+#darkModeToggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.65);
+    transform: scale(1.08);
+}
+
+body.dark-mode #darkModeToggle {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #ffe082 !important;
+}
+
+body.dark-mode #darkModeToggle:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}

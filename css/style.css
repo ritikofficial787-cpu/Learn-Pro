@@ -1,0 +1,158 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Modern Navbar Improvements --- */
+.navbar {
+    background: rgba(30, 41, 59, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    padding: 12px 0 !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: white !important;
+    letter-spacing: 1px;
+}
+
+/* Modern Hover Underline Effect for all nav links */
+.navbar-nav .nav-item {
+    padding: 0 4px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    padding: 8px 4px !important;
+    margin: 0 8px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2.5px;
+    bottom: 2px;
+    left: 50%;
+    background-color: #dc3545;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link.active {
+    color: #ffffff !important;
+}
+
+.navbar-nav .nav-item .nav-link:hover::after,
+.navbar-nav .nav-item .nav-link.active::after {
+    width: 100%;
+}
+
+/* Overriding old blocky hover for buttons like login/signup if they had custom classes */
+.custom-nav-item:hover {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.custom-nav .custom-nav-item a {
+    color: white !important;
+}
+
+.remove-vid-marg {
+    margin: 0px;
+    padding: 0px;
+}
+
+.vid-parent {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Prevents video overflow */
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.vid-overlay {
+    position: absolute;
+    top: 0;
+    /* Fixed: changed from 'absolute' to '0' */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #225470;
+    z-index: 1;
+    opacity: 0.5;
+    /* Adjusted for better visibility */
+}
+
+.vid-content {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Perfectly offsets the element to the center */
+    text-align: center;
+    color: white;
+}
+
+.bottom-banner {
+    color: white;
+    padding: 10px;
+}
+
+.stripe {
+    background-image: linear-gradient(240deg, #ed213a, #93291e);
+    padding: 3rem;
+    min-height: 13rem;
+    /* Changed to min-height to prevent text cutoff */
+    margin-top: 4rem;
+    /* Only rotate if you want a slanted background effect */
+    transform: rotate(-5deg);
+    z-index: 1;
+    /* Changed from -5 to 1 to bring it to the front */
+    position: relative;
+    /* Required for z-index to work properly */
+}
+
+@media screen and (min-width:0px) and (max-width:700px) {
+
+    /*Small Device*/
+    .my-content,
+    .txt-banner,
+    .stripe {
+        display: none;
+    }
+
+    .vid-content {
+        top: 12%;
+        left: 60%;
+    }
+
+    .custom-nav .custom-nav-item a {
+        padding: 10px 20px;
+        background-color: #255470;
+    }
+
+    .custom-nav-item:hover {
+        background-color: none;
+        border: none;
+        border-radius: none;
+    }
+}
